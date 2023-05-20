@@ -2,20 +2,33 @@ import './App.css'
 import CardFilmsComponent from './components/cardFilms/CardFilmsComponent'
 import useFilms from './hooks/useFilms'
 import SearchComponent from './components/search/SearchComponent'
+import { useEffect } from 'react'
+import { popularFilmsUrl } from './utils/constants'
 
 function App() {
-  const { responseFilms, loading, error } = useFilms()
+  const { responseFilms, loading, error, getFilms, setLoading } = useFilms()
+
+  useEffect(() => {
+    setLoading(true)
+    getFilms(popularFilmsUrl)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
   return (
     <div className='page'>
       <header>
-        <SearchComponent />
+        <SearchComponent getFilms={getFilms} />
       </header>
       <main>
         {error === '' || error === undefined ? (
-          responseFilms?.length > 0 ? (
-            <CardFilmsComponent films={responseFilms} loading={loading} />
+          !loading ? (
+            responseFilms?.length > 0 ? (
+              <CardFilmsComponent films={responseFilms} />
+            ) : (
+              <p>No se han encontrado peliculas</p>
+            )
           ) : (
-            <p>No se han encontrado peliculas</p>
+            <p>Cargando.......</p>
           )
         ) : (
           <p>{error}</p>
