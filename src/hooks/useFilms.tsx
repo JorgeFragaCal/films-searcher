@@ -1,11 +1,9 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { get } from '../services/apiRequest'
-import { popularFilmsUrl } from '../utils/constants'
 import { FilmRaw } from '../types-d'
 
 export default function useFilms() {
   const [data, setData] = useState<FilmRaw[]>([])
-  const [patata, setpatata] = useState([])
   const [loading, setLoading] = useState<boolean>(false)
   const [error, setError] = useState<string>('')
 
@@ -17,15 +15,16 @@ export default function useFilms() {
     setError(response.status_message)
     setLoading(false)
   }
+
   const errorCallback = (data: string) => {
     setError(data)
     console.log('ERROR', data)
   }
   const isLoading = (status: boolean) => setLoading(status)
 
-  useEffect(() => {
-    get(popularFilmsUrl, callback, errorCallback, isLoading)
-  }, [])
+  const getFilms = (url: string) => {
+    get(url, callback, errorCallback, isLoading)
+  }
 
   const responseFilms = data?.map((film: FilmRaw) => ({
     id: film.id,
@@ -36,12 +35,10 @@ export default function useFilms() {
 
   return {
     responseFilms,
-    setData,
     loading,
-    setLoading,
-    setError,
     error,
     data,
-    patata,setpatata
+    getFilms,
+    setLoading
   }
 }
