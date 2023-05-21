@@ -1,5 +1,5 @@
 import style from './SearchPage.module.css'
-import CardFilmsComponent from '../../components/cardFilms/CardFilmsComponent'
+import ListCardFilmsComponent from '../../components/listCardFilms/ListCardFilmsComponent'
 import useFilms from '../../hooks/useFilms'
 import SearchComponent from '../../components/search/SearchComponent'
 import { useEffect, useState } from 'react'
@@ -32,7 +32,7 @@ function SearchPage() {
         {error === '' || error === undefined ? (
           !loading ? (
             totalFilms?.length > 0 ? (
-              <CardFilmsComponent films={totalFilms} />
+              <ListCardFilmsComponent films={totalFilms} />
             ) : (
               <p>No se han encontrado peliculas</p>
             )

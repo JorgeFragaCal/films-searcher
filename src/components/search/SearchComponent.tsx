@@ -1,7 +1,9 @@
+import { Link } from 'react-router-dom'
 import useFilms from '../../hooks/useFilms'
 import useSearch from '../../hooks/useSearch'
 import { searchUrl } from '../../utils/constants'
 import styles from './Search.module.css'
+import { MY_LIST } from '../../routes/routesConstants'
 interface Props {
   getFilms: (url: string) => void
 }
@@ -24,7 +26,7 @@ const SearchComponent: React.FC<Props> = ({ getFilms }) => {
 
   return (
     <>
-      <h1>Buscador de Peliculas</h1>
+      <h1>Buscador de Peliculas</h1> <Link to={MY_LIST}>Mi lista</Link>
       <form onSubmit={handleSubmit} className={styles.form}>
         <label htmlFor='search'>Busca tu favorita</label>
         <div className={styles.search}>

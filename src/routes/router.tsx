@@ -1,12 +1,9 @@
 import App from '../App'
 import ErrorPage from '../ErrorPage'
+import MyListPage from '../pages/myList/MyListPage'
 import SearchPage from '../pages/searchPage/SearchPage'
 import { HOME, SEARCH, MY_LIST } from './routesConstants'
 
-
-async function loader() {
-  return { contacts }
-}
 
 export const routes = [
   {
@@ -17,7 +14,10 @@ export const routes = [
   {
     path: SEARCH,
     element: <SearchPage />,
-    errorElement: <ErrorPage />,
+  },
+  {
+    path: MY_LIST,
+    element: <MyListPage />,
   },
 ]
 
