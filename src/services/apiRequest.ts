@@ -14,7 +14,21 @@ export const get = (
   }
   fetchData(url, options, callback, errorCallback, loading)
 }
-
+export const put = (
+  url: string,
+  callback: (response: { results: FilmRaw[]; status_message: string }) => void,
+  errorCallback: (data: string) => void,
+  loading: (status: boolean) => void
+): void => {
+  const options = {
+    method: 'POST',
+    headers: {
+      accept: 'application/json',
+      'Content-Type': 'application/json;charset=utf-8',
+    },
+  }
+  fetchData(url, options, callback, errorCallback, loading)
+}
 const fetchData = async (
   url: string,
   options: object,

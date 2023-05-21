@@ -31,14 +31,17 @@ export default function useFilms() {
     title: film.original_title,
     image: film.poster_path,
     date: film.release_date,
+    overview: film.overview,
+    vote_average: film.vote_average,
+    vote_count: film.vote_count,
+    genre_ids: film.genre_ids,
   }))
 
   return {
     responseFilms,
     loading,
     error,
-    data,
     getFilms,
-    setLoading
+    setLoading,
   }
 }

@@ -1,0 +1,10 @@
+.page{
+  display: grid;
+  gap: 1rem;
+  padding: 2rem;
+
+}
+header{
+  display: grid;
+  gap: 1rem;
+}
