@@ -1,4 +1,4 @@
-import styles from './filmDetailModal.module.css'
+import styles from './FilmDetailModal.module.css'
 import {
   baseUrl,
   ratedMovieUrl,
