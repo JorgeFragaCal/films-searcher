@@ -1,8 +1,8 @@
 import styles from './ListCardFilms.module.css'
-import { Film } from '../../types-d'
+import { Film } from '../../../types-d'
 import { useState } from 'react'
-import CardFilmComponent from '../cardFilm/CardFilmComponent'
-import FilmDetailModalComponent from '../filmDetailModal/FilmDetailModalComponent'
+import CardFilmComponent from '../../atoms/cardFilm/CardFilmComponent'
+import FilmDetailModalComponent from '../../atoms/filmDetailModal/FilmDetailModalComponent'
 interface Props {
   films: Film[]
 }

@@ -1,11 +1,11 @@
 import style from './SearchPage.module.css'
-import ListCardFilmsComponent from '../../components/listCardFilms/ListCardFilmsComponent'
+import ListCardFilmsComponent from '../../components/molecules/listCardFilms/ListCardFilmsComponent'
 import useFilms from '../../hooks/useFilms'
-import SearchComponent from '../../components/search/SearchComponent'
+import SearchComponent from '../../components/atoms/search/SearchComponent'
 import { useEffect, useState } from 'react'
 import { popularFilmsUrl } from '../../utils/constants'
-import MenuComponent from '../../components/menu/MenuComponent'
-import { LOADING, NEXT, NOT_FOUND, PREVIUS } from '../../translations/es'
+import MenuComponent from '../../components/atoms/menu/MenuComponent'
+import { LOADING, NEXT, NOT_FOUND, PREVIOUS } from '../../translations/es'
 
 function SearchPage() {
   const { responseFilms, loading, error, getFilms, setLoading } = useFilms()
@@ -15,7 +15,7 @@ function SearchPage() {
   const nextPage = () => {
     setPage(page + 1)
   }
-  const previusPage = () => {
+  const previousPage = () => {
     setPage(page > 1 ? page - 1 : 1)
   }
 
@@ -44,7 +44,7 @@ function SearchPage() {
           <p>{error}</p>
         )}
         <div>
-          {page > 1 && <button onClick={previusPage}>{PREVIUS}</button>}
+          {page > 1 && <button onClick={previousPage}>{PREVIOUS}</button>}
           <button onClick={nextPage}>{NEXT}</button>
         </div>
       </main>

@@ -4,10 +4,10 @@ import {
   ratedMovieUrl,
   sessionUrl,
   sizeImg,
-} from '../../utils/constants'
-import genres from '../../mocks/genres.json'
-import { Body, Film } from '../../types-d'
-import useFilms from '../../hooks/useFilms'
+} from '../../../utils/constants'
+import genres from '../../../mocks/genres.json'
+import { Body, Film } from '../../../types-d'
+import useFilms from '../../../hooks/useFilms'
 import {
   GENERO,
   LOADING,
@@ -16,7 +16,7 @@ import {
   TITULO,
   VALORACIONES,
   VOTE,
-} from '../../translations/es'
+} from '../../../translations/es'
 
 interface Props {
   currentFilm: Film
@@ -64,7 +64,7 @@ const FilmDetailModalComponent: React.FC<Props> = ({
           <div className={styles.ratedContainer}>
             <div>
               <p>{VALORACIONES}:</p>
-              <p className={styles.puntuation}>
+              <p className={styles.punctuation}>
                 {currentFilm.vote_average} / 10⭐
               </p>
               <p className={styles.numberVotes}>

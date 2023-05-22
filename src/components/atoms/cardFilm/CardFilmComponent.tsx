@@ -1,6 +1,6 @@
-import { ESTRENO } from '../../translations/es'
-import { Film } from '../../types-d'
-import { baseUrl, sizeImg } from '../../utils/constants'
+import { ESTRENO } from '../../../translations/es'
+import { Film } from '../../../types-d'
+import { baseUrl, sizeImg } from '../../../utils/constants'
 import styles from './CardFilmComponent.module.css'
 interface Props {
   data: Film
@@ -22,9 +22,11 @@ const CardFilmComponent: React.FC<Props> = ({
         loading='lazy'
         src={baseUrl + sizeImg + data.image}
         alt={data.title}
-        width="100%"
+        width='100%'
       />
-      <span className={styles.date}>{ESTRENO}: {data.date}</span>
+      <span className={styles.date}>
+        {ESTRENO}: {data.date}
+      </span>
       <h2>{data.title}</h2>
     </div>
   )

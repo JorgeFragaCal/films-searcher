@@ -1,6 +1,6 @@
-import useFilms from '../../hooks/useFilms'
-import useSearch from '../../hooks/useSearch'
-import { searchUrl } from '../../utils/constants'
+import useFilms from '../../../hooks/useFilms'
+import useSearch from '../../../hooks/useSearch'
+import { searchUrl } from '../../../utils/constants'
 import styles from './Search.module.css'
 interface Props {
   getFilms: (url: string) => void

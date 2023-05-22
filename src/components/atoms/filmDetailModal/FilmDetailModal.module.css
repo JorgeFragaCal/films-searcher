@@ -41,7 +41,7 @@
   gap: var(--spacing-xl);
   align-content: center;
 }
-.puntuation {
+.punctuation {
   font-size: 2.5rem;
   font-weight: var(--font-weight-bold);
 }

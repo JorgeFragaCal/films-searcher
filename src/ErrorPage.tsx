@@ -5,7 +5,7 @@ function ErrorPage() {
 
   return (
     <div>
-      <h1>Pagina no encontrada</h1>
+      <h1>Página no encontrada</h1>
       <p>
         <i>{Boolean(error.statusText) || error.message}</i>
       </p>

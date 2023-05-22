@@ -1,5 +1,5 @@
-import ListCardFilmsComponent from '../../components/listCardFilms/ListCardFilmsComponent'
-import MenuComponent from '../../components/menu/MenuComponent'
+import ListCardFilmsComponent from '../../components/molecules/listCardFilms/ListCardFilmsComponent'
+import MenuComponent from '../../components/atoms/menu/MenuComponent'
 import { useFilmsStore } from '../../store/filmsRated'
 import styles from './MyListPage.module.css'
 function MyListPage() {
