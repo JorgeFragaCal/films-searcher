@@ -21,7 +21,7 @@ const CardFilmComponent: React.FC<Props> = ({
         loading='lazy'
         src={baseUrl + sizeImg + data.image}
         alt={data.title}
-        width={300}
+        width="100%"
       />
       <span className={styles.date}>Estreno: {data.date}</span>
       <h2>{data.title}</h2>

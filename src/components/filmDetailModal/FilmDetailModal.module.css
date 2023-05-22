@@ -29,14 +29,35 @@
   z-index: 1;
   background-color: rgba(0, 0, 0, 0.75);
 }
-.numberVotes{
+.numberVotes {
   font-size: 0.75rem;
 }
-.modalHeader{
+.modalHeader {
   display: flex;
   gap: 1rem;
 }
-.puntuation{
+.ratedContainer {
+  display: grid;
+  gap: 2rem;
+  align-content: center;
+}
+.puntuation {
   font-size: 2.5rem;
   font-weight: 900;
+}
+.input {
+  border: 1px solid white;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+.button {
+  color: #060510;
+}
+.error{
+  color: red;
 }

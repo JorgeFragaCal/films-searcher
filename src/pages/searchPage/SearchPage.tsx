@@ -4,6 +4,7 @@ import useFilms from '../../hooks/useFilms'
 import SearchComponent from '../../components/search/SearchComponent'
 import { useEffect, useState } from 'react'
 import { popularFilmsUrl } from '../../utils/constants'
+import MenuComponent from '../../components/menu/MenuComponent'
 
 function SearchPage() {
   const { responseFilms, loading, error, getFilms, setLoading } = useFilms()
@@ -25,10 +26,9 @@ function SearchPage() {
 
   return (
     <div className={style.page}>
-      <header>
+      <MenuComponent />
+      <main className={style.mainContainer}>
         <SearchComponent getFilms={getFilms} />
-      </header>
-      <main>
         {error === '' || error === undefined ? (
           !loading ? (
             totalFilms?.length > 0 ? (
@@ -42,8 +42,10 @@ function SearchPage() {
         ) : (
           <p>{error}</p>
         )}
-        <button onClick={previusPage}>Anterior</button>
-        <button onClick={nextPage}>Siguiente</button>
+        <div>
+          {page > 1 && <button onClick={previusPage}>Anterior</button>}
+          <button onClick={nextPage}>Siguiente</button>
+        </div>
       </main>
     </div>
   )

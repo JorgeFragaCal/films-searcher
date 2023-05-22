@@ -1,0 +1,6 @@
+.container{
+    font-size: 2rem;
+    font-weight: 900;
+    display: flex;
+    gap: 1rem;
+}

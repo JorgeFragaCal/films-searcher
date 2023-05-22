@@ -1,13 +1,13 @@
 import { useRouteError } from 'react-router-dom'
 
 function ErrorPage() {
-  const error = useRouteError()
+  const error = useRouteError() as { statusText: string; message: string }
 
   return (
     <div>
       <h1>Pagina no encontrada</h1>
       <p>
-        <i>{error.statusText || error.message}</i>
+        <i>{Boolean(error.statusText) || error.message}</i>
       </p>
     </div>
   )
