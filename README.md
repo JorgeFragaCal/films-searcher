@@ -1,3 +1,5 @@
+![image](https://github.com/JorgeFragaCal/films-searcher/assets/54991337/e5f005c9-833c-4351-9e80-f7dd5da730b5)
+
 ## App Details
 
 La prueba consistirá en realizar una mini-webapp en la que se mostrará un listado de películas con su póster, título y fecha de estreno. Una vez que se pinche en la imagen de alguna de ellas se visualizarán todos los datos de esta y además mostrará un pequeño formulario en el que puedas poner puntuación a la misma.
@@ -80,14 +82,18 @@ Lamentablemente, no pude dedicar suficiente tiempo para intentar implementar pru
 
 - Infinity Scroll: Personalmente me gustan mas que los botones de paginación, cuando el usuario llegue al final de una página y se hará una solicitud para cargar más datos.
 
-### Delete Related Films
+#### Delete Related Films
 
 De la misma manera que se añaden valoraciones, tendrían que poder eliminarse.
 
-### State Loading
+#### State Loading
 
 Aunque nuestra API es muy rápida, siempre es necesario contemplar el estado inicial mientas se cargan los datos, utilizando un esqueleto de componentes que muestra una vista preliminar del diseño y estructura de la aplicación mientras se cargan los datos.
 
 Además, implementamos Lazy Loading para una transición suave entre páginas. Durante el proceso de carga del JavaScript, es recomendable mostrar un esqueleto que indique que la página se está cargando.
 
 Esto ayuda a evitar una experiencia vacía o sin contenido mientras se espera a que se complete la carga.
+
+#### Error control
+
+Sería interesante mejorar la forma en la que se muestran los erros de la aplicacion, tanto las validaciones de los formularios como de las solicitudes de datos
