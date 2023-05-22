@@ -47,7 +47,7 @@ Para el desarrollo de la tarea, se han utilizado algunas librerías para hacerlo
 - `src/pages`: Directorio de páginas de React.js. Utiliza enrutamiento basado en el sistema de archivos. Una página debe estar compuesta por elementos de los directorios "ui" y "modules".
 - `src/routes`: Configuración de rutas de la aplicación.
 - `src/services/api`: Aquí se encuentran las funciones y utilidades relacionadas con la API de la aplicación .
-- `store`: D Aquí se encuentran los archivos relacionados con la configuración y la gestión del estado de la aplicación utilizando Zustand.
+- `store`: Aquí se encuentran los archivos relacionados con la configuración y la gestión del estado de la aplicación utilizando Zustand.
 - `translations`: Archivos de traducción para internacionalización.
 
 ## Run Locally
@@ -82,7 +82,7 @@ Lamentablemente, no pude dedicar suficiente tiempo para intentar implementar pru
 
 - Infinity Scroll: Personalmente me gustan mas que los botones de paginación, cuando el usuario llegue al final de una página y se hará una solicitud para cargar más datos.
 
-#### Delete Related Films
+#### Delete Rated Films
 
 De la misma manera que se añaden valoraciones, tendrían que poder eliminarse.
 
