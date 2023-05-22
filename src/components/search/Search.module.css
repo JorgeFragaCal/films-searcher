@@ -4,12 +4,12 @@
 .search {
   display: grid;
   grid-template-columns: 1fr auto;
-  border: 1px solid white;
-  border-radius: 8px;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  -ms-border-radius: 8px;
-  -o-border-radius: 8px;
+  border: var(--border);
+  border-radius: var(--border-radius);
+  -webkit-border-radius: var(--border-radius);
+  -moz-border-radius: var(--border-radius);
+  -ms-border-radius: var(--border-radius);
+  -o-border-radius: var(--border-radius);
   overflow: hidden;
   position: relative;
   max-width: 300px;
@@ -17,15 +17,15 @@
 label {
   top: -0.85rem;
   left: 0.85rem;
-  background-color: #090819;
+  background-color: var(--color-background);
   z-index: 1;
   position: absolute;
-  padding:0 0.5rem;
+  padding: 0 var(--spacing-sm);
 }
 input {
   background-color: transparent;
   border: none;
-  padding: 0.75rem 1rem;
+  padding: 0.75rem var(--spacing-md);
   width: 100%;
   color: inherit;
 }
@@ -33,6 +33,6 @@ input:focus {
   outline: none;
 }
 input[type='submit'] {
-  background-color: white;
+  background-color: var(--color-input-button);
   cursor: pointer;
 }

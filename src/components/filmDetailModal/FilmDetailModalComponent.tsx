@@ -10,10 +10,12 @@ import { Body, Film } from '../../types-d'
 import useFilms from '../../hooks/useFilms'
 import {
   GENERO,
+  LOADING,
   NUMERO_DE_VOTOS,
   SINOPSIS,
   TITULO,
   VALORACIONES,
+  VOTE,
 } from '../../translations/es'
 
 interface Props {
@@ -24,9 +26,8 @@ const FilmDetailModalComponent: React.FC<Props> = ({
   currentFilm,
   handleOpen,
 }) => {
-  const genre = genres.filter((obj) => currentFilm?.genre_ids?.includes(obj.id))
-
   const { putRated, error, loading, setLoading, getSession } = useFilms()
+  const genre = genres.filter((obj) => currentFilm?.genre_ids?.includes(obj.id))
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
@@ -47,6 +48,7 @@ const FilmDetailModalComponent: React.FC<Props> = ({
 
     getSession(sessionUrl, handlePutRated)
   }
+
   return (
     <>
       <div className={styles.overlay} onClick={handleOpen} />
@@ -71,10 +73,17 @@ const FilmDetailModalComponent: React.FC<Props> = ({
             </div>
             <form action='' onSubmit={handleSubmit}>
               <div className={styles.input}>
-                <input type='number' name='value' id='rated' max={10} min={0} />
+                <input
+                  type='number'
+                  name='value'
+                  id='rated'
+                  max={10}
+                  min={1}
+                  defaultValue={1}
+                />
                 <input
                   type='submit'
-                  value={loading ? 'Cargando' : 'Votar'}
+                  value={loading ? LOADING : VOTE}
                   className={styles.button}
                 />
               </div>

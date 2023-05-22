@@ -1,9 +1,12 @@
-import App from '../App'
-import ErrorPage from '../ErrorPage'
-import MyListPage from '../pages/myList/MyListPage'
-import SearchPage from '../pages/searchPage/SearchPage'
+/* eslint-disable react-refresh/only-export-components */
 import { HOME, SEARCH, MY_LIST } from './routesConstants'
-
+import { lazy } from 'react'
+const App = lazy(async () => await import('../App'))
+const MyListPage = lazy(async () => await import('../pages/myList/MyListPage'))
+const ErrorPage = lazy(async () => await import('../ErrorPage'))
+const SearchPage = lazy(
+  async () => await import('../pages/searchPage/SearchPage')
+)
 
 export const routes = [
   {
@@ -20,5 +23,3 @@ export const routes = [
     element: <MyListPage />,
   },
 ]
-
-

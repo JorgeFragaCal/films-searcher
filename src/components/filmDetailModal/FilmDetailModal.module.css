@@ -3,21 +3,21 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  background-color: #060510;
+  background-color: var(--color-background);
   max-width: 500px;
-  padding: 2rem;
-  border-radius: 8px;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  -ms-border-radius: 8px;
-  -o-border-radius: 8px;
+  padding: var(--spacing-xl);
+  border-radius: var(--border-radius);
+  -webkit-border-radius: var(--border-radius);
+  -moz-border-radius: var(--border-radius);
+  -ms-border-radius: var(--border-radius);
+  -o-border-radius: var(--border-radius);
   transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
   display: grid;
-  gap: 1rem;
+  gap: var(--spacing-md);
 }
 .overlay {
   position: absolute;
@@ -34,30 +34,30 @@
 }
 .modalHeader {
   display: flex;
-  gap: 1rem;
+  gap: var(--spacing-md);
 }
 .ratedContainer {
   display: grid;
-  gap: 2rem;
+  gap: var(--spacing-xl);
   align-content: center;
 }
 .puntuation {
   font-size: 2.5rem;
-  font-weight: 900;
+  font-weight: var(--font-weight-bold);
 }
 .input {
-  border: 1px solid white;
-  border-radius: 8px;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  -ms-border-radius: 8px;
-  -o-border-radius: 8px;
+  border: var(--border);
+  border-radius: var(--border-radius);
+  -webkit-border-radius: var(--border-radius);
+  -moz-border-radius: var(--border-radius);
+  -ms-border-radius: var(--border-radius);
+  -o-border-radius: var(--border-radius);
   display: grid;
   grid-template-columns: 1fr auto;
 }
 .button {
-  color: #060510;
+  color: var(--color-background);
 }
-.error{
+.error {
   color: red;
 }

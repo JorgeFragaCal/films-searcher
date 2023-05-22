@@ -1,9 +1,9 @@
 .page {
   display: grid;
-  gap: 2rem;
-  padding: 2rem;
+  gap: var(--spacing-xl);
+  padding: var(--spacing-xl);
 }
 .mainContainer {
   display: grid;
-  gap: 2rem;
+  gap: var(--spacing-xl);
 }

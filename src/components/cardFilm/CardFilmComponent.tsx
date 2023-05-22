@@ -17,7 +17,7 @@ const CardFilmComponent: React.FC<Props> = ({
     handleCurrentFilm(id)
   }
   return (
-    <div onClick={() => openDetails(data.id)}>
+    <div onClick={() => openDetails(data.id)} className={styles.container}>
       <img
         loading='lazy'
         src={baseUrl + sizeImg + data.image}

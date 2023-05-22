@@ -1,5 +1,38 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  /*Colors*/
+  --color-text: #fff;
+  --color-background: #090819;
+  --font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --font-size: 16px;
+  --line-height: 1.5;
+  --font-weight-normal: 400;
+  --font-weight-bold: 900;
+  --color-border: #fff;
+  --color-primary: #ff5800;
+  --color-input-button: #fff;
+
+  /* Espaciado */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+
+  /* Bordes */
+  --border-radius: 8px;
+  --border-radius-scroll: 5rem;
+  --border-width: 1px;
+  --border: var(--border-width) solid var(--color-border);
+  
+  /* Otros */
+  --box-shadow: 0px 2px 32px #0000000a;
+  font-family: var(--font-family);
+}
+
+[data-tema-claro='true'] {
+  --color-text: #090819;
+  --color-background: #fff;
+  --color-border: #090819;
 }
 /* Box sizing rules */
 *,
@@ -37,9 +70,9 @@ body {
   min-height: 100vh;
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
-  line-height: 1.5;
-  color: white;
-  background-color: #090819;
+  line-height: var(--line-height);
+  color: var(--color-text);
+  background-color: var(--color-background);
 }
 
 /* Remove list styles on ul, ol elements with a class attribute */
@@ -61,7 +94,7 @@ img {
 
 /* Natural flow and rhythm in articles by default */
 article > * + * {
-  margin-top: 1em;
+  margin-top: var(--spacing-sm);
 }
 
 /* Inherit fonts for inputs and buttons */
@@ -77,14 +110,14 @@ a {
 }
 
 h2 {
-  font-size: 1rem;
+  font-size: var(--spacing-md);
 }
 
 ::-webkit-scrollbar {
   width: 10px;
 }
 .active {
-  color: salmon;
+  color: var(--color-primary);
   text-decoration: underline;
 }
 /* Track */
@@ -94,12 +127,12 @@ h2 {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: coral;
-  border-radius: 50px;
-  -webkit-border-radius: 50px;
-  -moz-border-radius: 50px;
-  -ms-border-radius: 50px;
-  -o-border-radius: 50px;
+  background: var(--color-primary);
+  border-radius: var(--border-radius-scroll);
+  -webkit-border-radius: var(--border-radius-scroll);
+  -moz-border-radius: var(--border-radius-scroll);
+  -ms-border-radius: var(--border-radius-scroll);
+  -o-border-radius: var(--border-radius-scroll);
 }
 /* Remove all animations and transitions for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {

@@ -1,11 +1,11 @@
 .container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1rem;
+  gap: var(--spacing-md);
   overflow-y: scroll;
-  padding-right: 1rem;
-  margin-right: -1rem;
+  overflow-x: hidden;
+  padding-right: var(--spacing-md);
+  margin-right: -var(--spacing-md);
+  padding-bottom: var(--spacing-md);
   height: 69vh;
 }
-
-
