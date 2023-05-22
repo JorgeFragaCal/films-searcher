@@ -1,3 +1,4 @@
+import { ESTRENO } from '../../translations/es'
 import { Film } from '../../types-d'
 import { baseUrl, sizeImg } from '../../utils/constants'
 import styles from './CardFilmComponent.module.css'
@@ -23,7 +24,7 @@ const CardFilmComponent: React.FC<Props> = ({
         alt={data.title}
         width="100%"
       />
-      <span className={styles.date}>Estreno: {data.date}</span>
+      <span className={styles.date}>{ESTRENO}: {data.date}</span>
       <h2>{data.title}</h2>
     </div>
   )

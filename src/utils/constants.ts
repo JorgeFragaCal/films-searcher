@@ -11,4 +11,4 @@ export const searchUrl = (search: string) =>
   `${BASE_URL}search/movie?query=${search}&api_key=${API_KEY}`
 
 export const ratedMovieUrl = (movieId: string, guestSessionId: string) =>
-  `https://api.themoviedb.org/3/movie/${movieId}?guest_session_id=${guestSessionId}&api_key=${API_KEY}`
+  `https://api.themoviedb.org/3/movie/${movieId}/rating?guest_session_id=${guestSessionId}&api_key=${API_KEY}`

@@ -1,3 +1,4 @@
+import { INTERNAL_ERROR } from '../translations/es'
 import { Film, FilmRaw } from '../types-d'
 
 export const get = (
@@ -76,7 +77,7 @@ const fetchDataSession = async (
     })
     .then((response) => handlePutRated(response))
     .catch((err) => {
-      errorCallback('Ha habido un error interno en la búsqueda')
+      errorCallback(INTERNAL_ERROR)
       throw new Error(err)
     })
     .finally(() => loading(false))
@@ -97,7 +98,7 @@ export const put = (
       accept: 'application/json',
       'Content-Type': 'application/json;charset=utf-8',
     },
-    body,
+    body: JSON.stringify(body),
   }
   updateData(
     url,
@@ -126,7 +127,7 @@ const updateData = async (
       callback(response)
     })
     .catch((err) => {
-      errorCallback('Ha habido un error interno en la búsqueda')
+      errorCallback(INTERNAL_ERROR)
       throw new Error(err)
     })
     .finally(() => loading(false))

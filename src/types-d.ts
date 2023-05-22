@@ -25,3 +25,7 @@ export interface Api {
   errorCallback: (data: string) => void
   loading: (status: boolean) => void
 }
+
+export interface Body {
+  [key: string]: FormDataEntryValue
+}

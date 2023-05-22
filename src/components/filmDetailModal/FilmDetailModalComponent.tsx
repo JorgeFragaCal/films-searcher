@@ -6,8 +6,15 @@ import {
   sizeImg,
 } from '../../utils/constants'
 import genres from '../../mocks/genres.json'
-import { Film } from '../../types-d'
+import { Body, Film } from '../../types-d'
 import useFilms from '../../hooks/useFilms'
+import {
+  GENERO,
+  NUMERO_DE_VOTOS,
+  SINOPSIS,
+  TITULO,
+  VALORACIONES,
+} from '../../translations/es'
 
 interface Props {
   currentFilm: Film
@@ -23,14 +30,19 @@ const FilmDetailModalComponent: React.FC<Props> = ({
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    const rated = 0
+    const formData = new FormData(event.currentTarget)
+
+    const body: Body = {}
+    for (const pair of formData.entries()) {
+      body[pair[0]] = pair[1]
+    }
     setLoading(true)
 
     const handlePutRated = (response: { guest_session_id: string }) =>
       putRated(
         ratedMovieUrl(currentFilm.id, response.guest_session_id),
         currentFilm,
-        rated
+        body
       )
 
     getSession(sessionUrl, handlePutRated)
@@ -49,17 +61,17 @@ const FilmDetailModalComponent: React.FC<Props> = ({
           />
           <div className={styles.ratedContainer}>
             <div>
-              <p>Valoraciones:</p>
+              <p>{VALORACIONES}:</p>
               <p className={styles.puntuation}>
                 {currentFilm.vote_average} / 10⭐
               </p>
               <p className={styles.numberVotes}>
-                (Nº de votos: {currentFilm.vote_count})
+                ({NUMERO_DE_VOTOS}: {currentFilm.vote_count})
               </p>
             </div>
             <form action='' onSubmit={handleSubmit}>
               <div className={styles.input}>
-                <input type='number' name='rated' id='rated' max={10} min={0} />
+                <input type='number' name='value' id='rated' max={10} min={0} />
                 <input
                   type='submit'
                   value={loading ? 'Cargando' : 'Votar'}
@@ -71,9 +83,15 @@ const FilmDetailModalComponent: React.FC<Props> = ({
             </form>
           </div>
         </div>
-        <p>Titulo: {currentFilm.title}</p>
-        <p>Genero: {genre.map((item) => `${item.name}, `)}</p>
-        <p>Sinopsis: {currentFilm.overview}</p>
+        <p>
+          {TITULO}: {currentFilm.title}
+        </p>
+        <p>
+          {GENERO}: {genre.map((item) => `${item.name}, `)}
+        </p>
+        <p>
+          {SINOPSIS}: {currentFilm.overview}
+        </p>
       </div>
     </>
   )

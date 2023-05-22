@@ -1,16 +1,17 @@
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import './App.css'
 import { MY_LIST, SEARCH } from './routes/routesConstants'
+import { BIENVENIDO, BUSCADOR_DE_PELICULAS, BUSCA_TU_FAVORITA, MI_LISTA } from './translations/es'
 
 function App() {
   return (
     <div className='page'>
       <main>
-        <span>Bienvenido tu </span>
-        <h1>Buscador de Peliculas</h1>
+        <span>{BIENVENIDO} </span>
+        <h1>{BUSCADOR_DE_PELICULAS}</h1>
         <div className='links'>
-          <Link to={SEARCH}>Buscar Peliculas</Link>
-          <Link to={MY_LIST}>Ver mi lista</Link>
+          <NavLink to={SEARCH}>{BUSCA_TU_FAVORITA}</NavLink>
+          <NavLink to={MY_LIST}>{MI_LISTA}</NavLink>
         </div>
       </main>
     </div>

@@ -5,6 +5,7 @@ import SearchComponent from '../../components/search/SearchComponent'
 import { useEffect, useState } from 'react'
 import { popularFilmsUrl } from '../../utils/constants'
 import MenuComponent from '../../components/menu/MenuComponent'
+import { LOADING, NEXT, NOT_FOUND, PREVIUS } from '../../translations/es'
 
 function SearchPage() {
   const { responseFilms, loading, error, getFilms, setLoading } = useFilms()
@@ -34,17 +35,17 @@ function SearchPage() {
             totalFilms?.length > 0 ? (
               <ListCardFilmsComponent films={totalFilms} />
             ) : (
-              <p>No se han encontrado peliculas</p>
+              <p>{NOT_FOUND}</p>
             )
           ) : (
-            <p>Cargando.......</p>
+            <p>{LOADING}</p>
           )
         ) : (
           <p>{error}</p>
         )}
         <div>
-          {page > 1 && <button onClick={previusPage}>Anterior</button>}
-          <button onClick={nextPage}>Siguiente</button>
+          {page > 1 && <button onClick={previusPage}>{PREVIUS}</button>}
+          <button onClick={nextPage}>{NEXT}</button>
         </div>
       </main>
     </div>

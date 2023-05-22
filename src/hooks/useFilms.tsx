@@ -18,9 +18,7 @@ export default function useFilms() {
     setLoading(false)
   }
 
-  const sessionCallback = (response: {
-    status_message: string
-  }) => {
+  const sessionCallback = (response: { status_message: string }) => {
     setError(response.status_message)
     setLoading(false)
   }
@@ -54,10 +52,7 @@ export default function useFilms() {
     )
   }
 
-  const putRated = (url: string, currentFilm: Film, rated: number) => {
-    const body = {
-      puntuation: rated,
-    }
+  const putRated = (url: string, currentFilm: Film, body: object) => {
     put(
       url,
       ratedCallback,
