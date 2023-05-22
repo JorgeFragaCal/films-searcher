@@ -55,7 +55,9 @@ Es necesario tener instalado Node 16 y añadir el archivo .env con la variable V
 Luego, todo lo que tienes que hacer es:
 
 npm install
+
 npm run dev
+
 Y abrir http://127.0.0.1:5173/ en tu navegador.
 
 ## Deployment
