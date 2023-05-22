@@ -1,3 +1,5 @@
+El desarrollo de la prueba se ha hecho en la rama develop
+
 La prueba consistirá en realizar una mini-webapp en la que se mostrará un listado de
 películas con su póster, título y fecha de estreno. Una vez que se pinche en la imagen
 de alguna de ellas se visualizarán todos los datos de esta y además mostrará un
